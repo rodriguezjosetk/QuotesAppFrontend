@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'frontend';
+  newQuote = false;
+
+  setNewQuote(param: boolean){
+    this.newQuote = param;
+  }
 }

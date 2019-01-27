@@ -21,9 +21,17 @@ export class QuotesComponent implements OnInit {
 
   onGetQuotes(){
     this.quoteService.getQuotes().subscribe((data: Quote[])=>{
-      console.log(data);
       this.quotes = data;
     });
+  }
+
+  onDeleted(quote: Quote){
+    const position = this.quotes.findIndex(
+      (quoteEl: Quote) => {
+        return quoteEl.id == quote.id;
+      }
+    );
+    this.quotes.splice(position, 1);
   }
 
 }

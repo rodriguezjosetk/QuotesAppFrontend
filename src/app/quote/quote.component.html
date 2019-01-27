@@ -1,8 +1,16 @@
 <div class="card">
-  <div class="card-body">
-    <p class="card-title h5">{{quote.content}}</p>
-    <a href="" class="card-link"></a>
-    <a href="" class="card-link"></a>
+  <div class="card-body pb-0">
+    <h5 class="card-title">{{quote.content}}</h5>
+  </div>
+  <div class="card-body mt-1" *ngIf="editing">
+    <div class="form-group">
+      <input type="text" class="form-control" [(ngModel)]="editValue">
+    </div>
+    <a href="#" class="card-link badge badge-pill badge-primary" (click)="onUpdate()">Save</a>
+    <a href="#" class="card-link badge badge-pill badge-info" (click)="onCancel()">Cancel</a>
+  </div>
+  <div class="card-body" *ngIf="!editing">
+    <a href="#" class="card-link badge badge-pill badge-warning" (click)="onEdit()">Edit</a>
+    <a href="#" class="card-link badge badge-pill badge-danger" (click)="onDelete()">Delete</a>
   </div>
 </div>
-

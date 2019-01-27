@@ -1,17 +1,17 @@
 <div id="app">
   <div class="container mt-5">
     <div class="row">
-      <div class="col-12">
-        <a href="#">Quotes</a>
-        <a href="#">New Quote</a>
+      <div class="col-12 nav nav-pills">
+        <a href="/" routerLink="/" class="nav-link" [ngClass]="{'active':!newQuote}" (click)="setNewQuote(false)">Quotes</a>
+        <a href="/new-quote" routerLink="/new-quote" class="nav-link" [ngClass]="{'active':newQuote}" (click)="setNewQuote(true)">New Quote</a>
       </div>
     </div>
     <hr>
-    <div class="row">
-      <div class="col-12">
+    <div class="row"> 
+      <div class="col-12">    
         <router-outlet>
-        </router-outlet>
-      </div>
+        </router-outlet>  
+      </div>     
     </div>
   </div>
 </div>
